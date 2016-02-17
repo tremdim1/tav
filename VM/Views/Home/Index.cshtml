@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VM</title>
+</head>
+<body>
+
+    <div>
+        <h3>Товар</h3>
+        <table>
+            <tr><td><p>Название</p></td>
+                <td><p>Стоимсоть</p></td>
+                <td><p>Остаток</p></td>
+            </tr>
+            @foreach (var p in ViewBag.Product1)
+            {
+            <tr>
+                <td><p>@p.Name</p></td>
+                <td><p>@p.Cost</p></td>
+                <td><p>@p.Residue</p></td>
+                <td><p><a href="/Home/Buy/@p.ProductId">Купить</a></p></td>
+            </tr>
+            }
+        </table>
+    </div>
+
+    <div>
+        <h3>Кошелек клиента</h3>
+        <table>
+            <tr><td><p>Достоинство монеты</p></td>
+                <td><p>Количество</p></td>
+                <td></td>
+            </tr>
+            @foreach (var pc in ViewBag.PurseClient1)
+            {
+            <tr>
+                <td><p>@pc.Dignity</p></td>
+                <td><p>@pc.Quantity</p></td>
+                <td><p><a href="/Home/EditPC/@pc.PurseClientId">Внести монету</a></p></td>
+            </tr>
+            }
+        </table>
+    </div>
+    
+    <div>
+        <h3>Внесенная сумма</h3>
+        <table>
+            @foreach (var a in ViewBag.Amount1)
+            {
+            <tr>
+                <td><p>@a.amount</p></td>
+                <td><p><a href="/Home/Letting/@a.AmountId">Сдача</a></p></td>
+            </tr>
+            }
+        </table>
+    </div>
+    
+    <div>
+        <h3>Кошелек VM</h3>
+        <table>
+            <tr><td><p>Достоинство монеты</p></td>
+                <td><p>Количество</p></td>
+                <td></td>
+            </tr>
+            @foreach (var pvm in ViewBag.PurseVM1)
+            {
+            <tr>
+                <td><p>@pvm.Dignity</p></td>
+                <td><p>@pvm.Quantity</p></td>
+            </tr>
+            }
+        </table>
+    </div>
+
+
+
+</body>
+</html>
