@@ -17,7 +17,7 @@ namespace VM.Controllers
 
         public ActionResult Index()
         {
-            //pull
+            //qweasdzxc
             // получаем из бд все объекты PurseClient
             IEnumerable<PurseClient> pc = db.PurseClient1;
             // передаем все полученный объекты в динамическое свойство
